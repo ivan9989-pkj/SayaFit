@@ -1,0 +1,146 @@
+
+
+html{
+    font-size: 62.5%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+   
+    font-size: 22px;
+    margin: 0;
+    background-image: url(../img/creame-un-fondo-para-la-pagina-web-de-una-tienda-d-upscaled.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body::after {
+    opacity: 0.1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Para que el fondo esté detrás del contenido */
+}
+
+
+
+/* Estilo para la barra de navegación */
+.barra {
+    
+    background-color: #1E1F22; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px; 
+    border-top-left-radius: 0.5rem; /* Borde superior izquierdo redondeado */
+    border-top-right-radius: 0.75rem; /* Borde superior derecho redondeado */
+    border-bottom: none;
+    
+    
+}
+
+.navegador a {
+    color: white; /* Color del texto en blanco */
+    text-decoration: none; /* Quita la subraya en los enlaces */
+    margin-right: 10px;
+    margin-top: 5px; /* Espacio entre enlaces */
+}
+
+.navegador a:hover{
+    color: #FD523D;
+}
+
+/* Estilo para el logotipo */
+.barra img {
+    margin-right: 20px; /* Espacio a la derecha del logotipo */
+}
+.Foto-logo{
+    width: 180px;
+}
+
+
+
+.iconos-nosotros{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+    padding: 2rem;
+    background-color: aliceblue;
+    border-radius: 0.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+   
+}
+
+h1{
+    text-align: center;
+}
+
+.icono{
+    text-align: center;
+    margin-left: 7rem;
+    margin-right: 7rem;
+
+}
+/*Inicio*/
+
+.Inicio {
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 27rem; 
+    color: white;
+    text-align: center; 
+}
+
+
+
+.Inicio h2{
+    margin-bottom: 4rem;
+}
+
+.Inicio a {
+    background-color: white;
+    text-decoration: none;
+    padding: 2rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+.Inicio a:hover{
+    color: yellow;
+    background-color: black;
+
+}
+
+
+/*footer*/
+
+.footer {
+    background-color: #1E1F22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom: none;
+    position:fixed;
+    bottom: 0 ;
+    width: 100%;
+}
+
+.main-content{
+    margin-bottom:4rem ;
+}
+
+.footer h4{
+    color: white;
+    margin-right: 10rem;
+    margin-left: 4rem;
+}
+
+.nosotros{
+    color: yellow;
+}
