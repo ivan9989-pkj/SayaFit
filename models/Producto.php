@@ -85,14 +85,18 @@ class Producto extends ActiveRecord{
         return $atributos;
     }
     public function sanitizarAtributos(){
-        $atributos=$this->atributos();
-        $sanitizado=[];
-        //este vector se recorre como asociativo
-        foreach ($atributos as $key=>$value){
-            $sanitizado[$key]= self::$db->escape_string($value);
+        $atributos = $this->atributos();
+        $sanitizado = [];
+        
+        foreach ($atributos as $key => $value){
+            // No es necesario escapar los valores en PDO
+            // Simplemente asignamos los valores directamente
+            $sanitizado[$key] = $value;
         }
+        
         return $sanitizado;
     }
+    
 
     public static function setDB($database)
     {
@@ -121,12 +125,11 @@ class Producto extends ActiveRecord{
 
         //iterar los resultados
         $array=[];
-        while ($registro=$resultado->fetch_assoc()){
+        while ($registro=$resultado->fetch()){
             $array[]=self::crearObjeto($registro);
 
         }
-        //liberar la memoria
-        $resultado->free();
+        
         //devolver resultados
         return $array;
     }

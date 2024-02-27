@@ -1,19 +1,24 @@
-<?php 
-function conectarDb(): mysqli
+<?php
+function conectarDb(): PDO
 {
-    $db = new mysqli('localhost', 'root', '', 'sayafit');
+    $dsn = 'mysql:host=localhost;dbname=sayafit';
+    $usuario = 'root';
+    $contraseña = '';
 
-    if (!$db) {
-        echo "Error: No se pudo conectar a MySQL.";
-        echo "errno de depuración: " . mysqli_connect_errno();
-        echo "error de depuración: " . mysqli_connect_error();
+    try {
+        $db = new PDO($dsn, $usuario, $contraseña);
+        // Establecer el modo de error de PDO a excepciones
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        // En caso de error en la conexión, mostrar mensaje y salir
+        echo 'Error: No se pudo conectar a MySQL.';
+        echo 'Error: ' . $e->getMessage();
         exit;
     }
 
     return $db;
 }
-
-
+?>
 
 
 
