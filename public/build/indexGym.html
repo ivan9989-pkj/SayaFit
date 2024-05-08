@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignador de Rutina de Gimnasio</title>
+    <link rel="stylesheet" href="/public/build/css/stylesGym.css">
+</head>
+<body>
+    <h1>Asignador de Rutina de Gimnasio - Sayafit</h1>
+    <form id="rutinaForm">
+        <label for="diasSemana">¿Cuántos días a la semana planeas entrenar?</label>
+        <input type="number" id="diasSemana" name="diasSemana" min="1" max="7" required><br><br>
+        
+        <label for="objetivo">¿Cuál es tu objetivo?</label>
+        <select id="objetivo" name="objetivo" required>
+            <option value="masa">Ganar masa muscular</option>
+            <option value="perder">Perder peso</option>
+            <option value="mantenimiento">Mantenimiento de cuerpo</option>
+        </select><br><br>
+
+        <button type="submit">Generar Rutina</button>
+    </form>
+
+    <div id="rutinaContainer" style="display:none;">
+        <h2>Rutina de Entrenamiento:</h2>
+        <p id="rutinaTexto"></p>
+    </div>
+
+    <script src="/public/build/js/scriptGym.js"></script>
+</body>
+</html>
