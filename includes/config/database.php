@@ -1,9 +1,9 @@
 <?php 
-function conectarDb(): mysqli
-{
+
+function conectarDb(): mysqli {
     $db = new mysqli('localhost', 'root', '', 'sayafit');
 
-    if (!$db) {
+    if ($db->connect_error) {
         echo "Error: No se pudo conectar a MySQL.";
         echo "errno de depuración: " . mysqli_connect_errno();
         echo "error de depuración: " . mysqli_connect_error();
@@ -12,9 +12,3 @@ function conectarDb(): mysqli
 
     return $db;
 }
-
-
-
-
-
-
