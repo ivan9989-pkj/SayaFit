@@ -17,7 +17,22 @@ body{
     background: #1f2029;
 }
 
+/* B O T O N  V O L V E R */
+.back-to-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #e6230a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.5s ease;
+  }
 
+  .back-to-home:hover {
+    background-color: #000;
+  }
 
 /* F O R M U L A R I O  I N I C I O  D E  S E S I Ó N  */
 
@@ -330,3 +345,5 @@ body{
     filter: blur(0);
     transition-delay: calc(.1s *var(--j));
 }
+
+
