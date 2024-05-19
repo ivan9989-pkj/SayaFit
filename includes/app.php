@@ -7,8 +7,9 @@
              $db=conectarDb();
 
             use Model\ActiveRecord;
-
+            
             ActiveRecord::setDB($db);
+
 
 
         

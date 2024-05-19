@@ -67,7 +67,7 @@ function mostrarNotificacion($codigo) {
 
 
 function validarTipoContenido($tipo){
-    $tipos = ['producto'];
+    $tipos = ['producto' , 'categorias'];
     return in_array($tipo, $tipos);
 }
 ?>

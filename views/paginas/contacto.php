@@ -1,47 +1,79 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../build/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../../build/css/Inicio.css">
-    <link rel="stylesheet" type="text/css" href="../../build/css/contacto.css">
+    <link rel="stylesheet" type="text/css" href="../../css/contacto.css" />
 </head>
-<h2>Si quiere comunicarse con Nosotros Contactenos por aqui</h2>
-<form class="contacto" id="form">
-    <fieldset>
-        <legend>
-            Información Personal
-        </legend>
 
-        <label for="from_name">Nombre:</label>
-        <input type="text" placeholder=" Tu Nombre" name="from_name" id="from_name">
 
-        <label for="email">E-mail:</label>
-        <input type="email" placeholder="Tu E-mail" name="email_id" id="email_id">
+<title>Contacto - Sayafit</title>
 
-        <label for="mensaje">Mensaje:</label>
-        <textarea name="message" id="message" placeholder="Tu Mensaje" cols="30" rows="10"></textarea>
-        <button type="submit" id="button">Enviar</button>
-    </fieldset>
-</form>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<body>
+    <div class="contact-container">
+        <h1>Contacto</h1>
+        <p>¡Hola! Bienvenido a Sayafit, tu gimnasio virtual donde te ayudamos a alcanzar tus metas de salud y
+            bienestar desde la comodidad de tu hogar. Si tienes alguna pregunta, sugerencia o simplemente deseas
+            ponerte en contacto con nosotros, no dudes en hacerlo a través del formulario a continuación. Estamos
+            aquí para ayudarte en todo lo que necesites.</p> <!-- Descripción extendida -->
+
+        <br><br><br>
+
+
+        <div class="contact-form">
+            <form id="form">
+                <div class="field">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="name" placeholder="Nombre" required>
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="field">
+                    <label for="subject">Asunto</label>
+                    <input type="text" name="subject" id="subject" placeholder="Asunto" required>
+                </div>
+                <div class="field">
+                    <label for="message">Mensaje</label>
+                    <textarea type="text" name="message" id="message" placeholder="Mensaje" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Acepto los avisos legales</label>
+                    <input type="checkbox" id="legal" name="legal" required>
+                </div>
+
+                <input type="submit" id="button" class= "btn btn-success" value="Enviar mensaje">
+            </form>
+        </div>
+    </div>
+   
+</body>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <script type="text/javascript">
-    emailjs.init('INte1CFDC9D5IPyqP');
-    
-    document.getElementById('button').addEventListener('click', function(event) {
-        event.preventDefault();
-
-        this.textContent = 'Enviando...';
-
-        const serviceID = 'default_service';
-        const templateID = 'template_r21i4pk';
-
-        emailjs.sendForm(serviceID, templateID, this.form)
-            .then(() => {
-                this.textContent = 'Enviar';
-                alert('¡Enviado!');
-            }, (err) => {
-                this.textContent = 'Enviar';
-                alert(JSON.stringify(err));
-            });
-    });
+  emailjs.init('4Wr0vSusUM_PW1ylG')
 </script>
+
+<script>
+    const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_t663jfv';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar mensaje';
+      alert('Mensaje enviado correctamente!');
+    }, (err) => {
+      btn.value = 'Enviar mensaje';
+      alert(JSON.stringify(err));
+    });
+});
+</script>
+
+</html>

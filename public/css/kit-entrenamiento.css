@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1f2029;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch; /* Esto asegura que todos los .box tengan la misma altura */
+    margin: 10px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.boxs {  
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    
+}
+
+.boxs h2{
+    color: #000000;
+}
+
+.buttonser {
+    display: block;
+    padding: 15px 10px;
+    font-size: 18px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.buttonser img {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    transition: transform 0.3s ease; 
+}
+
+.boxs:hover .buttonser img {
+    transform: scale(1.1); 
+}
+
+.btn-volver {
+    position: fixed;
+    top: 20px; /* Cambia la posición a la parte superior */
+    left: 20px; /* Cambia la posición a la parte izquierda */
+    background-color: #e6230a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn-volver:hover {
+    background-color: #c4c3ca;
+    color:#000000;
+    transition: 0.3s ease-in-out;
+}

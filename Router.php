@@ -2,15 +2,13 @@
 
 namespace MVC;
 
-require_once 'controllers/CarritoController.php';
+class Router{
 
-class Router {
-
-    public $rutasGET = [];
-    public $rutasPOST = [];
+    public $rutasGET=[];
+    public $rutasPOST=[];
     
-    public function get($url, $fn) {
-        $this->rutasGET[$url] = $fn;
+    public function get($url,$fn){
+        $this->rutasGET[$url]=$fn;
     }
 
     public function post($url, $fn) {
@@ -27,31 +25,23 @@ class Router {
             $fn = $this->rutasPOST[$currentUrl] ?? null;
         }
 
-        if ($fn) {
-            call_user_func([new $fn[0], $fn[1]]);
+        if ( $fn ) {
+            // Call user fn va a llamar una función cuando no sabemos cual sera
+            call_user_func($fn, $this); // This es para pasar argumentos
         } else {
             echo "Página No Encontrada o Ruta no válida";
         }
     }
 
-    public function render($view, $datos = []) {
-        foreach ($datos as $key => $value) {
-            $$key = $value;
+    public function render($view, $datos=[] ){
+        foreach($datos as $key=>$value){
+         $$key=$value;
         }
 
         ob_start();
-        include __DIR__ . "/views/$view.php";
-        $contenido = ob_get_clean();
-        include __DIR__ . "/views/layout.php";
+        
+        include __DIR__."/views/$view.php";
+        $contenido=ob_get_clean();
+        include __DIR__."/views/layout.php";
     }
 }
-
-$router = new Router();
-
-$router->get('/carrito', ['CarritoController', 'mostrarCarrito']);
-$router->post('/carrito/agregar', ['CarritoController', 'agregarProducto']);
-$router->post('/carrito/eliminar', ['CarritoController', 'eliminarProducto']);
-$router->post('/carrito/actualizar', ['CarritoController', 'actualizarCantidad']);
-$router->post('/carrito/finalizar', ['CarritoController', 'finalizarCompra']);
-
-$router->comprobarRutas();

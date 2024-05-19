@@ -1,5 +1,5 @@
 {
-    "name": "2daw/saya-fit",
+    "name": "2daw/sayafit",
     "authors": [
         {
             "name": "Iván Santana Quintana",
@@ -12,8 +12,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Model\\": "models/",
-            "Controllers\\": "controllers/"
+            "Model\\":"./models",
+            "MVC\\":"./",
+            "Controllers\\":"./controllers" 
         }
     }
 }
+
+

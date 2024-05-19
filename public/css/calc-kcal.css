@@ -1,0 +1,112 @@
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1f2029;
+    color: #c4c3ca;
+}
+
+.container, form, #rutinaContainer {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #1f2029; /* Cambiado a color oscuro para contrastar con el fondo */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #1f2029; /* Cambiado a color oscuro para contrastar con el fondo */
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="range"],
+output {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #c4c3ca;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #1f2029; /* Cambiado a color oscuro para contrastar con el fondo */
+}
+
+input[type="submit"],
+button {
+    padding: 14px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #e6230a;
+    color: #fff;
+}
+
+input[type="submit"]:hover {
+    background-color: #c91800;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #e6230a;
+}
+
+#rutinaContainer {
+    background-color: #f5f5f5;
+    margin-top: 50px; /* Espaciado adicional */
+}
+
+#rutinaTexto {
+    font-size: 18px;
+    color: #1f2029; /* Cambiado a color oscuro para contrastar con el fondo */
+}
+
+.dia-entrenamiento {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.grupo-muscular {
+    margin-bottom: 10px;
+}
+
+.btn-volver {
+    position: fixed;
+    top: 20px; /* Cambia la posición a la parte superior */
+    left: 20px; /* Cambia la posición a la parte izquierda */
+    background-color: #e6230a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn-volver:hover {
+    background-color: #c4c3ca;
+    color:#000000;
+    transition: 0.3s ease-in-out;
+  }
+
+
+
+  

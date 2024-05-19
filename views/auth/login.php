@@ -1,70 +1,96 @@
+
+<?php
+
+// En tu vista donde no quieres mostrar el encabezado y el pie de página
+$mostrarEncabezado = false;
+$mostrarPie = false;
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="./build/css/login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../css/login.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <title>LOGIN |sayafit</title>
 </head>
 
-<?php foreach($errores as $error): ?>
-    <div class="alerta error">
-        <?php echo $error; ?>
+<body class=" flex justify-center items-center min-h-screen">
+  <div class="wrapper">
+    <span class="bg-animate"></span>
+    <span class="bg-animate2"></span>
+
+    <!-- FORMULARIO INICIAR SESION -->
+
+    <div class="form-box login">
+      <h2 class="animation text-3xl text-white items-center" style="--i:0; --j:21">Iniciar sesión</h2>
+      <form method="POST" name="loginForm" novalidate>
+        <div class="input-box animation relative w-full h-12 my-6" style="--i:1; --j:22;">
+          <input type="email" name="email" required />
+          <label>Usuario</label>
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="input-box animation" style="--i:2; --j:23;">
+          <input type="password" name="passwd" required />
+          <label>Contraseña</label>
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <button type="submit" class="btn animation" style="--i:3; --j:24;">Iniciar Sesión</button>
+        <div class="logreg-link animation" style="--i:4; --j:25;">
+          <p>
+            ¿No tienes cuenta? <a href="" class="register-link">Regístrate</a>
+          </p>
+        </div>
+      </form>
     </div>
-<?php endforeach; ?>
-
-<div class="wrapper">
-    <div class="form-wrapper sign-in">
-        <form method="POST" name="loginForm" novalidate>
-            <h2>Login</h2>
-            <div class="input-group">
-                <input id="email" name="email" type="email" required>
-                <label for="email">E-mail:</label>
-            </div>
-            <div class="input-group">
-                <input id="password" name="password" type="password" required>
-                <label for="password">Password:</label>
-            </div>
-            <button type="submit">Login</button>
-            <div class="signUp-link">
-                <p>¿No tienes una cuenta? <a href="#" class="signUpBtn-link">Sign Up</a></p>
-            </div>
-            <div class="google">
-                <button type="button" class="boton-google"><a href="/">Volvamos a la Página Principal</a></button>
-            </div>
-        </form>
+    <div class="info-text login">
+      <h2 class="animation" style="--i:0;">¡Hola amig@!</h2>
+      <p class="animation" style="--i:1;">Nos alegra verte de nuevo.</p>
     </div>
-    <div class="form-wrapper sign-up">
-        <form method="POST" name="signUpForm" action="/registro"> <!-- Cambio en el atributo action -->
-            <h2>Sign Up</h2>
-            <div class="input-group">
-                <input id="nombre-input" name="nombre" type="text" required>
-                <label for="nombre">Nombre:</label>
-            </div>
-            <div class="input-group">
-                <input id="email-input" name="email" type="email" required>
-                <label for="email">Email</label>
-            </div>
-            <div class="input-group">
-                <input id="password-input" name="password" type="password" required>
-                <label for="password">Password</label>
-            </div>
-            <button type="submit">Sign Up</button>
-            <div class="signUp-link">
-                <p> ¿Ya tienes una cuenta? <a href="#" class="signInBtn-link">Sign Login</a></p>
-            </div>
-        </form>
+
+    <!-- FORMULARIO DE REGISTRO -->
+
+    <div class="form-box register">
+      <h2 class="animation" style="--i:17; --j:0;">Regístrate</h2>
+      <form method="POST" name="signUpForm" action="/registro">
+        <div class="input-box animation" style="--i:18; --j:1;">
+          <input type="text" name="nombre" required />
+          <label>Usuario</label>
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="input-box animation" style="--i:19; --j:2;">
+          <input type="email" name="email" required />
+          <label>Email</label>
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="input-box animation" style="--i:20; --j:3;">
+          <input type="password" name="passwd" required />
+          <label>Contraseña</label>
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <button type="submit" class="btn animation" style="--i:21; --j:4;">Regístrate</button>
+        <div class="logreg-link animation" style="--i:22; --j:5;">
+          <p>
+            ¿Ya tienes cuenta?
+            <a href="" class="login-link">Iniciar Sesión</a>
+          </p>
+        </div>
+      </form>
     </div>
-</div>
+    <div class="info-text register">
+      <h2 class="animation" style="--i:17; --j:0;">Hola amig@!</h2>
+      <p class="animation" style="--i:18; --j:1;">Nos alegra volver a verte. </p>
+    </div>
+  </div>
 
-<script>
-    const signInBtnLink = document.querySelector('.signInBtn-link');
-    const signUpBtnLink = document.querySelector('.signUpBtn-link');
-    const wrapper = document.querySelectorAll('.wrapper')[0]; // Selecciona el primer .wrapper
+  <!-- SCRIPTS -->
+  <script src="../../js/script.js"></script>
+  <script src="https://kit.fontawesome.com/e5d388d5d6.js" crossorigin="anonymous"></script>
+</body>
 
-    signUpBtnLink.addEventListener('click', () => {
-        wrapper.classList.add('active');
-    });
-
-    signInBtnLink.addEventListener('click', () => {
-        wrapper.classList.remove('active');
-    });
-</script>
+</html>

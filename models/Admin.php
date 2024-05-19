@@ -1,63 +1,83 @@
 <?php
 
-
 namespace Model;
 
+class Admin extends ActiveRecord {
 
-class Admin extends ActiveRecord{
+    // tabla admin
+    protected static $tabla = 'admin';
 
+    // ColumnasDB
 
-    protected static $tabla='usuarios';
-    protected static $columnasDB= ['id', 'email', 'password'];
+    protected static $columnasDB = ['ID_usuario' , 'email' , 'passwd'];
 
     public $id;
     public $email;
-    public $password;
+    public $passwd;
 
+    
+    //constructor 
     public function __construct($args=[]){
-        $this->id = $args['id'] ?? null;
-        $this->email = $args['email'] ?? '';
-        $this->password = $args['password'] ?? '';
+        $this->id = $args['ID_usuario'] ?? null;
+        $this->email = $args['email'] ??'';
+        $this->passwd = $args['passwd'] ?? '';
+
     }
 
-    public function aceptarUsuario(){
-        $query = "SELECT * FROM " . self::$tabla . " WHERE email='" . $this->email . "' LIMIT 1";
-        $resultado = self::$db->query($query);
+ 
+    // validación admin
+    public function validar(){
+        if(!$this->email){
+            self::$errores[]= "El Email del usuario es obligatorio";
+        }
+        if(!$this->passwd){
+            self::$errores[]="El Password del usuario es obligatorio";
+        }
+        return self::$errores;
+    }
 
-        if(!$resultado->num_rows){
+    // Funcion aceptar al usuario 
+    public function aceptarUsuario() {
+        $query = "SELECT * FROM " . self::$tabla . " WHERE email=:email LIMIT 1";
+        $stmt = self::$db->prepare($query);
+        $stmt->bindParam(':email', $this->email);
+        $stmt->execute();
+
+        if ($stmt->rowCount() == 0) {
             return false; // El email no existe
         }
 
-        return $resultado->fetch_object();
+        return $stmt->fetchObject();
+    }
+
+
+    // Comprobación de la existencia del Usuario
+    public function existeUsuario(){
+        $query = "SELECT * FROM " . self::$tabla . " WHERE email ='" . $this->email . "' LIMIT 1";
+        $resultado = self::$db->query($query);
+
+        if(!$resultado->num_rows){
+            self::$errores[]='El Usuario No Existe';
+            return;
+        }
+        return $resultado;
     }
 
     public function comprobarPassword($usuario){
-        return password_verify($this->password, $usuario->password);
+        return password_verify($this->passwd, $usuario->passwd);
     }
+
+    //Auntentificar datos
     public function autenticar(){
-        //El usuario esta autenticado
-
+         // El usuario esta autenticado
         session_start();
+        // Llenar el arreglo de la sesión
+        $_SESSION['admin'] = $this->email;
+        $_SESSION['login'] =true;
 
-        //Llenar el arrreglo de sesiones
-        $_SESSION['usuario']=$this->email;
-        $_SESSION['login']=true;
-
-
-        header('Location: /admin');
-        
+        header('location: /admin');
     }
-
     
-    public static function registrarUsuario($nombre, $email, $password) {
-        $db = self::$db;
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
-        $query = "INSERT INTO usuarios (nombre, email, password) VALUES (?, ?, ?)";
-        $stmt = $db->prepare($query);
-        $stmt->bind_param("sss", $nombre, $email, $passwordHash);
-        $stmt->execute();
-        $stmt->close();
-    }
-
-}
+        
+    
+}   

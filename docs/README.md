@@ -1,1 +1,0 @@
-Proyecto que hay que descargar para su funcionamiento

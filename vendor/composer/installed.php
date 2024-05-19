@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => '2daw/saya-fit',
+        'name' => '2daw/sayafit',
         'pretty_version' => '1.0.0+no-version-set',
         'version' => '1.0.0.0',
-        'reference' => null,
+        'reference' => NULL,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '2daw/saya-fit' => array(
+        '2daw/sayafit' => array(
             'pretty_version' => '1.0.0+no-version-set',
             'version' => '1.0.0.0',
-            'reference' => null,
+            'reference' => NULL,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -38,9 +38,9 @@
             'dev_requirement' => false,
         ),
         'intervention/image' => array(
-            'pretty_version' => '3.6.4',
-            'version' => '3.6.4.0',
-            'reference' => '193324ec88bc5ad4039e57ce9b926ae28dfde813',
+            'pretty_version' => '3.5.1',
+            'version' => '3.5.1.0',
+            'reference' => '67be90e5700370c88833190d4edc07e4bb7d157b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../intervention/image',
             'aliases' => array(),

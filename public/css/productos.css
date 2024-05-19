@@ -1,0 +1,341 @@
+/* Estilos específicos para productos */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 80px; /* Agrega un espacio entre los productos y otros elementos */
+    margin-bottom: 40px 20px; /* Agrega un espacio entre los productos y otros elementos */
+    padding: 50px 20px; /* Añade padding a los lados */
+}
+
+.product-card,
+.product-card-calzado,
+.product-card-fitness {
+    width: 500px; /* Ancho fijo */
+    max-height: 750px; /* Alto máximo fijo */
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que el contenido se distribuya verticalmente */
+    align-items: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.product-card img,
+.img-calzado, .img-fitness {
+    max-width: 50%;
+    height: auto; /* Ajusta automáticamente el alto para mantener la proporción */
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+    overflow: hidden; /* Evita que el texto se desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos cuando el texto se desborde */
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+.product-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #000;
+}
+
+.product-info p {
+    margin: 10px 0; /* Este valor ya estaba presente, asegurándose de que haya un margen superior e inferior */
+    color: #666;
+    overflow: hidden; /* Evita que el texto se desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos cuando el texto se desborde */
+    white-space: wrap; /* Evita que el texto se rompa */
+}
+
+.product-info span {
+    font-weight: bold;
+}
+
+/* BOTÓN AÑADIR CARRITO */
+.add-to-cart-btn {
+    background-color: #e6230a;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #000;
+    color: white;
+}
+
+/* BOTONES DE AÑADIR AL CARRITO DESDE CATEGORÍAS O NUTRICIÓN*/
+input[type="number"] {
+    color:#000;
+    border: 2px solid #707070;
+}
+.btn-add-carrito{
+    background-color: #e6230a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.btn-add-carrito:hover{
+    background-color: #000000;
+    color:#fff;
+    transition: 0.5s ease;
+}
+
+.btn-pago, .remove-product, .clean-carrito {
+    background-color: #e6230a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.btn-pago{
+    display: flex;
+    flex-direction: row;
+}
+
+.carrito {
+    border-radius: 10px;
+    padding: 20px; /* Aumenta el padding para dar más espacio interior */
+    margin-top: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    background-color: #dfdee7;
+    text-align: left; /* Cambia a alineación a la izquierda para mejorar la legibilidad */
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    align-items: flex-start; /* Alinea los elementos al inicio (izquierda) */
+    gap: 10px; /* Añade un margen entre los elementos */
+}
+
+
+.carrito ul {
+    list-style-type: none; /* Elimina los marcadores de lista predeterminados */
+    padding: 0; /* Remueve el padding interno de la lista */
+    margin: 0; /* Remueve el margen externo de la lista */
+}
+
+.carrito ul li {
+    display: flex; /* Usa Flexbox para organizar el título y el botón de eliminar */
+    align-items: center; /* Alinea los elementos verticalmente */
+    gap: 10px; /* Añade un margen entre el título y el botón */
+}
+
+
+.carrito h2{
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+}
+
+.carrito h3 {
+    font-weight: 500;
+    color: #000;
+    text-decoration: underline;
+    margin-bottom: 10px; /* Añade un margen debajo del total del carrito */
+}
+
+.carrito form {
+    display: flex; /* Usa Flexbox para organizar los botones al final */
+    justify-content: flex-end; /* Alinea los botones al final (derecha) */
+    gap: 10px; /* Añade un margen entre los botones */
+    margin-top: auto; /* Empuja los botones hacia abajo, al final del contenedor */
+}
+
+
+.carrito .form-container {
+    display: flex; /* Usa Flexbox para organizar los botones */
+    justify-content: flex-end; /* Alinea los botones al final (derecha) */
+    gap: 10px; /* Añade un margen entre los botones */
+    margin-top: auto; /* Empuja los botones hacia abajo, al final del contenedor */
+    width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+}
+
+
+.carrito form button {
+    background-color: #e6230a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.carrito form button:hover {
+    background-color: #000;
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+.carrito table {
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.carrito table th,
+.carrito table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+    color: #000; /* Texto en negro */
+}
+
+.carrito table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #000; /* Texto en negro */
+}
+
+.carrito table tfoot td {
+    font-weight: bold;
+    color: #000; /* Texto en negro */
+    text-align: right; /* Alinea el contenido a la derecha */
+}
+
+.carrito table tfoot .total-label {
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.carrito table tfoot .total-value {
+    text-align: right; /* Alinea el texto a la derecha */
+}
+
+
+.carrito .form-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Asegura que el texto de los botones sea negro */
+.btn-pago, .remove-product, .clean-carrito {
+    background-color: #e6230a;
+    color: #000; /* Texto en negro */
+    padding: px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.btn-pago:hover, .remove-product:hover, .clean-carrito:hover {
+    background-color: #000;
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+strong{
+    color: #000;
+    font-weight: 700;
+    text-align: left;
+}
+
+/* CHECKOUT */
+
+
+.body-checkout {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #000; /* Color de texto negro */
+}
+
+h1 {
+    text-align: center;
+    color: #000; /* Color de texto negro */
+}
+
+.invoice {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    color: #000; /* Color de texto negro */
+}
+
+.invoice th,
+.invoice td {
+    border: 1px solid #000; /* Borde negro */
+    padding: 8px;
+    color: #000; /* Color de texto negro */
+}
+
+.invoice th {
+    background-color: #f2f2f2;
+    text-align: left;
+    color: #000;
+    font-weight: 700; /* Color de texto negro */
+}
+
+.invoice td {
+    text-align: center;
+    color: #000; /* Color de texto negro */
+}
+
+.total {
+    text-align: right;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #000; /* Color de texto negro */
+}
+
+.form2 {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    text-align: left; /* Alinea los labels a la derecha */
+    width: 300px; /* Ancho fijo para los labels */
+    margin-right: 20px; /* Espacio entre labels e inputs */
+    color: #000;
+    font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 450px; /* Ancho deseado para los inputs */
+    margin-bottom: 10px; /* Espacio entre los inputs */
+    padding: 10px;
+}
+
+.finalizar-compra {
+    padding: 10px 20px;
+    background-color: #e6230a;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.finalizar-compra:hover {
+    background-color: #000;
+    transition: 0.5s ease;
+}

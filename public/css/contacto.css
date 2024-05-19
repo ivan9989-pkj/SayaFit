@@ -1,0 +1,79 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1f2029;
+    color: #fff; /* Cambiado el color del texto del cuerpo */
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h1 {
+    color: #000000; /* Cambiado el color del título */
+    text-align: center;
+}
+
+.contact-form .field {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px; /* Añadido espacio entre etiqueta y entrada */
+}
+
+.contact-form input[type="text"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input[type="submit"] {
+    width: 100%;
+    background-color: #e6230a;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #ff4433;
+}
+
+#form { /* Añadido el estilo para el formulario */
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #1f2029;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#button { /* Añadido el estilo para el botón */
+    margin-top: 10px; /* Añadido espacio entre el último campo y el botón */
+}
+
+textarea#message,
+input#name,
+input#subject,
+input#email{
+    color: #000000;
+}

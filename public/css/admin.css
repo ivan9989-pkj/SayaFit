@@ -1,0 +1,160 @@
+/* Estilos para el formulario */
+body {
+    background-color: #1f2029;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+fieldset {
+    border: 2px solid #e6230a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #1f2029;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+}
+legend {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #ffffff;
+}
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #e6230a;
+    border-radius: 5px;
+    background-color: #1f2029;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+textarea {
+    resize: vertical;
+}
+input[type="file"] {
+    margin-top: 5px;
+}
+input[type="file"]::-webkit-file-upload-button {
+    padding: 10px 15px;
+    background-color: #e6230a;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #000000;
+}
+input[type="file"]::file-selector-button {
+    font-size: 16px;
+    font-weight: 600;
+}
+input[type="submit"] {
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    background-color: #e6230a;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+input[type="submit"]:hover {
+    background-color: #000000;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+/* Estilos para botones */
+.boton-actualizar {
+    background-color: #28a745;
+    border-radius: 10px;
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+.boton-eliminar {
+    background-color: #e6230a;
+}
+.boton-crear {
+    background-color: #1f2029;
+    color: #ffffff;
+}
+/* Estilos para el botón de volver */
+.btn.btn-volver {
+    border: 1px solid  #ffffff;
+    background-color: #e6230a;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.btn.btn-crear {
+    display: inline-block;
+    width: 130px;
+    text-align: center;
+    background-color: #1f2029;
+    color: #ffffff;
+    border-radius: 5px; /* Redondea un poco las esquinas */
+    padding: 8px 16px; /* Reducir el padding para hacerlo más pequeño */
+    text-decoration:underline;
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    font-weight: 600; /* Añade un poco más de peso a la fuente */
+    transition: background-color 0.3s ease; /* Efecto de transición al pasar el ratón */
+}
+
+.btn.btn-crear:hover {
+    background-color: #000000; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.btn.btn-volver:hover {
+    background-color: #000000;
+    transition: 0.5s ease;
+    border: 1px solid #ffffff;
+}
+
+.boton-actualizar:hover, .boton-eliminar:hover{
+    background-color: #000000;
+    transition: 0.5s ease;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px; /* Tamaño de fuente para la tabla */
+    color: #ffffff; /* Color de texto para la tabla */
+}
+th, td {
+    border: 1px solid #ffffff;
+    padding: 10px;
+    text-align: left;
+    background-color: #2b2e38; /* Color de fondo para las celdas */
+}
+th {
+    background-color: #020305; /* Color de fondo para las cabeceras */
+}

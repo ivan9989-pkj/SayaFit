@@ -1,0 +1,114 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    background: #1f2029;
+    color: #000;
+    text-align: center;
+}
+
+h1 {
+    color: #000;
+}
+
+h2{
+    color:#fff;
+    font-weight: 700;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #e6230a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff3320;
+}
+
+#rutinaContainer {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2e2f38;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #c4c3ca;
+    padding: 10px;
+    text-align: left;
+    color: #fff;
+}
+
+th {
+    background-color: #1f2029;
+}
+
+tr:nth-child(even) {
+    background-color: #3a3b44;
+}
+
+.dia-entrenamiento {
+    border: 1px solid #c4c3ca;
+    background-color: #fff;
+    color: #1f2029;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.grupo-muscular {
+    margin-bottom: 10px;
+}
+
+.btn-volver {
+    position: fixed;
+    top: 20px; /* Cambia la posición a la parte superior /
+    left: 20px; / Cambia la posición a la parte izquierda */
+    background-color: #e6230a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-volver:hover {
+    background-color: #c4c3ca;
+    color: #000000;
+    transition: 0.3s ease-in-out;
+}
+
+select#objetivo {
+    color: #c4c3ca;
+}
+
+.black-text-option {
+    color: #000 !important;
+}

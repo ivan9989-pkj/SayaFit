@@ -7,76 +7,122 @@ if (!isset($_SESSION)) {
 $auth = $_SESSION['login'] ?? false;
 
 
-
-// Verificar la ruta actual
-$rutaActual = $_SERVER['REQUEST_URI'];
-$mostrarHeaderFooter = strpos($rutaActual, '/login') === false; // Mostrará true si no estamos en la página /login
-// Verificar la ruta actual
-$rutaActual2 = $_SERVER['REQUEST_URI'];
-$mostrarHeaderFooter2 = strpos($rutaActual, '/login') === false; // Mostrará true si no estamos en la página /login
-
-// Mostrar el encabezado y el pie de página solo si no estamos en la página /login
-if ($mostrarHeaderFooter && $mostrarHeaderFooter2) {
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../build/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../../build/css/productos.css">
-    <script src="../../build/js/login.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+    <link rel="shortcut icon" href="../../img/LOGO SAYAFIT ISA (1).ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/productos.css" />
+    <title>SAYAFIT</title>
 </head>
 <body>
-    
-    <header class="heade  ">
-        <div class="contenedor">
-            <div class="barra">
-                <a href="/">
-                    <img class="Foto-logo" src="../../build/img/Foto-logo.png" alt="Logotipo de SayaSport">
-                </a>
+   
+<?php if ($mostrarEncabezado ?? true): ?>
+    <!-- NAVEGADOR -->
+    <nav>
+      <!-- LOGO -->
+      <div class="logo">
+        <a href="/"
+          ><img src="/img/LOGO SAYAFIT ISA (1).png" alt="logo"
+        /></a>
+      </div>
+      <div class="hamburger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/nosotros">NOSOTROS</a></li>
+        <li><a href="/categorias">CATEGORÍAS</a>
+          <!-- <ul>
+            <li>Ropa hombre</li>
+            <li>Ropa mujer</li>
+            <li>Calzado hombre</li>
+            <li>Calzado mujer</li>
+            <li>Material fitness</li>
+          </ul> -->
+        </li>
+        <li><a href="/nutricion">NUTRICIÓN</a>
+          <!-- <ul>
+            <li>Alimentación</li>
+            <li>Barritas</li>
+            <li>Bebidas y suplementos</li>
+            <li>Geles energéticas</li>
+            <li>Mezcladores</li>
+            <li>Té e infusiones</li>
+          </ul> -->
+        </li>
+        <li><a href="/kit-entrenamiento">KIT-ENTRENAMIENTO</a></li>
+        <li><a href="/contacto">CONTACTO</a></li>
+        <li>
+        <?php
+        if($auth){
+          if (isset($_SESSION['usuario']) && substr($_SESSION['usuario'], -11) !== '@sayafit.com') {
+          
+           } else{
+             echo '<a href="/admin">Admin</a>';
+           }
+        }
+          ?>
+        </li>
+        <li>
+        <?php
+        if($auth){
+          echo ' <a class="login-button" href="/logout">Cerrar sesión</a>';
+        }else{
+          echo ' <a class="login-button" href="/login">Login</a>';
+        }
+        ?>
+        </li>
+      </ul>
+    </nav>
+<?php endif; ?>
 
-                <div class="derecha">
-                    <img src="" alt="">
-                    <nav class="navegador">
-                        <a href="/">Inicio</a>
-                        <a href="/nosotros">Nosotros</a>
-                        <a href="/productos">Productos</a>
-                        <a href="/contacto">Contacto</a>
-                        <?php 
-                        if ($auth) {
-                            echo '<a href="/logout">Cerrar Sesión</a>';
-                        } else {
-                            echo '<a href="/login">Login</a>';
-                        }
-                        ?>
-                    </nav>
-                </div>
+<?php echo $contenido; ?>
 
-            </div>
+<?php if ($mostrarPie ?? true): ?>
+    <!-- BOTONES REDES -->
+    <div class="buttons">
+        <button class="buttons__toggle"><i class="fa fa-share-alt"></i></button>
+        <div class="allbtns">
+            <a class="button" href="https://www.instagram.com/gym_sayafit/"><i class="fa-brands fa-instagram"></i>Instagram</a>
+            <a class="button" href="https://www.youtube.com/channel/UCGx0olEt69AAmBMPQ58MCwA"><i class="fa-brands fa-youtube"></i>YouTube</a>
+            <a class="button" href=""><i class="fa-brands fa-tiktok"></i>TikTok</a>
         </div>
-    
-    </header>
+    </div>
 
+    <footer class="redes">
+        <div class="iconos-redes">
+            <a class="icono" href="https://www.instagram.com/gym_sayafit/"><i class="fa-brands fa-instagram"></i></a>
+            <a class="icono" href="https://www.youtube.com/channel/UCGx0olEt69AAmBMPQ58MCwA"><i class="fa-brands fa-youtube"></i></a>
+            <a class="icono" href="https://www.tiktok.com/@sayafit"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
 
+        &copy Todos los derechos reservados 2024
 
+  <div class="texto-legales">
+  <a href="/textos/cookies" target="_blank">Cookies</a>
+  |
+  <a href="/textos/aviso_legal" target="_blank" >Aviso legal</a>
+  |
+  <a href="/textos/politica" target="_blank">Política de privacidad</a>
+  </footer>
+<?php endif; ?>
 
-<?php
-} // Fin del if que verifica si se debe mostrar el header y el footer
-
-echo $contenido; // Mostrar el contenido de la página
-
-if ($mostrarHeaderFooter && isset($mostrarFooter) && $mostrarFooter) {
-    include __DIR__ . "/footer.php"; // Incluir el footer solo si no estamos en la página /login
-}
-
-if ($mostrarHeaderFooter) {
-?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../../js/hamburguesa.js"></script>
+<script src="../../js/buttons.js"></script>
+<script src="../../js/error404.js"></script>
+<script src="https://kit.fontawesome.com/e5d388d5d6.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../js/main.js"></script>
 </body>
 </html>
-
-
-
-<?php
-} // Fin del if que verifica si se debe mostrar el header y el footer
-?>

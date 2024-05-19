@@ -24,7 +24,7 @@
             },
             "time": "2023-11-12T22:16:48+00:00",
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "GrahamCampbell\\ResultType\\": "src/"
@@ -134,22 +134,22 @@
         },
         {
             "name": "intervention/image",
-            "version": "3.6.4",
-            "version_normalized": "3.6.4.0",
+            "version": "3.5.1",
+            "version_normalized": "3.5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "193324ec88bc5ad4039e57ce9b926ae28dfde813"
+                "reference": "67be90e5700370c88833190d4edc07e4bb7d157b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/193324ec88bc5ad4039e57ce9b926ae28dfde813",
-                "reference": "193324ec88bc5ad4039e57ce9b926ae28dfde813",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/67be90e5700370c88833190d4edc07e4bb7d157b",
+                "reference": "67be90e5700370c88833190d4edc07e4bb7d157b",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "intervention/gif": "^4.1",
+                "intervention/gif": "^4.0.1",
                 "php": "^8.1"
             },
             "require-dev": {
@@ -162,7 +162,7 @@
             "suggest": {
                 "ext-exif": "Recommended to be able to read EXIF data properly."
             },
-            "time": "2024-05-08T13:53:15+00:00",
+            "time": "2024-03-22T07:12:19+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -193,7 +193,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Intervention/image/issues",
-                "source": "https://github.com/Intervention/image/tree/3.6.4"
+                "source": "https://github.com/Intervention/image/tree/3.5.1"
             },
             "funding": [
                 {
@@ -240,7 +240,7 @@
                     "dev-master": "1.9-dev"
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "PhpOption\\": "src/PhpOption/"
@@ -317,7 +317,7 @@
                     "url": "https://github.com/symfony/polyfill"
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "bootstrap.php"
@@ -399,7 +399,7 @@
                     "url": "https://github.com/symfony/polyfill"
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "bootstrap.php"
@@ -476,7 +476,7 @@
                     "url": "https://github.com/symfony/polyfill"
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "bootstrap.php"
@@ -576,7 +576,7 @@
                     "dev-master": "5.6-dev"
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Dotenv\\": "src/"
