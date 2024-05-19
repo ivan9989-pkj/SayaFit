@@ -21,10 +21,13 @@ $mostrarPie = false;
 </head>
 
 <body class=" flex justify-center items-center min-h-screen">
+
+<button id="btnVolverInicio" class="btn-volver">Volver al inicio</button>
+
   <div class="wrapper">
     <span class="bg-animate"></span>
     <span class="bg-animate2"></span>
-
+    
     <!-- FORMULARIO INICIAR SESION -->
 
     <div class="form-box login">
@@ -88,9 +91,17 @@ $mostrarPie = false;
     </div>
   </div>
 
+ 
+
   <!-- SCRIPTS -->
   <script src="../../js/script.js"></script>
   <script src="https://kit.fontawesome.com/e5d388d5d6.js" crossorigin="anonymous"></script>
+  <script>
+    document.getElementById('btnVolverInicio').addEventListener('click', function() {
+    window.location.href = '../index.php';
+  });
+  </script>
+  
 </body>
 
 </html>
