@@ -95,7 +95,7 @@ $auth = $_SESSION['login'] ?? false;
         <div class="allbtns">
             <a class="button" href="https://www.instagram.com/gym_sayafit/"><i class="fa-brands fa-instagram"></i>Instagram</a>
             <a class="button" href="https://www.youtube.com/channel/UCGx0olEt69AAmBMPQ58MCwA"><i class="fa-brands fa-youtube"></i>YouTube</a>
-            <a class="button" href=""><i class="fa-brands fa-tiktok"></i>TikTok</a>
+            <a class="button" href="https://www.tiktok.com/@sayafit"><i class="fa-brands fa-tiktok"></i>TikTok</a>
         </div>
     </div>
 
